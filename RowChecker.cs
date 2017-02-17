@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace FinalExam
 {
@@ -11,7 +7,7 @@ namespace FinalExam
         public int[] GetSums(List<List<int>> board)
         {
             int[] rowSum = new int[board.Count];
-
+            int counter = 0;
             foreach (List<int> row in board)
             { 
                 int sum = 0;
@@ -19,8 +15,8 @@ namespace FinalExam
                 {
                     sum += val;
                 }
-                int counter = 0;
-                rowSum[counter++] = sum;
+                rowSum[counter] = sum;
+                counter++;
             }
             return rowSum;
         }
