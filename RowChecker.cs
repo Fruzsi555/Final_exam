@@ -1,12 +1,20 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace FinalExam
 {
-    class RowChecker
+    public class RowChecker
     {
         public int[] GetSums(List<List<int>> board)
         {
-            int[] rowSum = new int[board.Count];
+            int[] rowSum = null;
+            try
+            {
+                rowSum = new int[board.Count];
+            } catch(NullReferenceException e)
+            {
+                Console.WriteLine("error" + e);
+            }
             int counter = 0;
             foreach (List<int> row in board)
             { 
