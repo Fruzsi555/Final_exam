@@ -8,21 +8,21 @@ namespace FinalExam
 {
     class RowChecker
     {
-        public string Reverse(string text)
+        public int[] GetSums(List<List<int>> board)
         {
-            try
-            {
-                string reverse = "";
-                for (int i = text.Length - 1; i >= 0; i--)
+            int[] rowSum = new int[board.Count];
+
+            foreach (List<int> row in board)
+            { 
+                int sum = 0;
+                foreach (int val in row)
                 {
-                    reverse += text[i];
+                    sum += val;
                 }
-                return reverse;
+                int counter = 0;
+                rowSum[counter++] = sum;
             }
-            catch (Exception e)
-            {
-                return "An error occurred: '{0}'" + e;
-            }
+            return rowSum;
         }
     }
 }
