@@ -32,5 +32,15 @@ namespace FinalExam.Tests
                 Assert.AreEqual(expected[i], actual[i]);
             }
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void GetSumsTest_CheckNullException()
+        {
+            List<List<int>> list = null;
+            RowChecker check = new RowChecker();
+
+            check.GetSums(list);
+        }
     }
 }
